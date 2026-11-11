@@ -1,0 +1,7 @@
+# Nameclick dogfood report — Frantic claim 9b282aed (bounty 147)
+
+- **What I tried:** Installed Nameclick 0.2.0 from the Chrome Web Store into Google Chrome 157 (fresh automation profile), signed in with Google, then ran one lookup through the extension popup for a LinkedIn profile URL I chose: `https://www.linkedin.com/in/satyanadella/` (Satya Nadella, Microsoft).
+- **What happened:** The popup accepted the profile link, showed "Find email", and after one click returned a completed card: Satya Nadella, Chairman and CEO · Microsoft, verified email `satyan@microsoft.com`, "1 lookup used / 2 left today". A found result, not a no-match.
+- **Specific observation:** The result card exposes the raw enrichment fields inline — title/employer line, `in/satyanadella` handle echo, a Verified badge with a "Found 4 Nov 2026" provenance line, location (Redmond), and Experience/Company tabs — so the reviewer can check the same record server-side without leaving the popup.
+- **Environment:** Windows 11, Google Chrome 157.0.8103.40, extension v0.2.0 installed from Chrome Web Store (source verified on chrome://extensions), lookup driven through the extension's own popup UI on 2026-11-11 ~23:27 UTC.
+- **One friction point:** The first "Continue with Google" click inside the popup tab silently did nothing until the OAuth account-chooser page was given a real gesture sequence; after consent the popup flipped to the authenticated "3 left today" state without a reload.
